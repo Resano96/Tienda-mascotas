@@ -8,7 +8,17 @@ import static Tienda.Venta.*;
 import static Util.Utils.*;
 import static Tienda.Datos.*;
 
+/**
+ * Clase principal que contiene el punto de entrada del programa.
+ * Gestiona el menú principal y los submenús de clientes, mascotas y ventas.
+ */
 public class Main {
+    /**
+     * Método principal que ejecuta el programa de gestión de tienda.
+     * Presenta menús interactivos para gestionar clientes, mascotas y ventas.
+     *
+     * @param args Argumentos pasados por línea de comandos (no se usan).
+     */
     public static void main (String[]args){
 
         boolean salir = false;
@@ -69,11 +79,8 @@ public class Main {
                                 //elimina el Cliente con el dni anterior
                                 eliminarCliente(ListadoDeClientes,DNIABorrar);
                             }
-                            case 5 -> {
-
-                            }
-                            case 6 -> volver = true;
-                            case 7 -> System.exit(0);
+                            case 5 -> volver = true;
+                            case 6 -> System.exit(0);
                             default -> System.out.println("Opcion invalida");
                         }
                     }

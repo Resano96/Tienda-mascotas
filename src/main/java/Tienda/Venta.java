@@ -4,15 +4,49 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/// Definimos la clase Venta
+/**
+ * Clase que representa una venta de una o varias mascotas a un cliente.
+ */
 public class Venta {
+
+    /**
+     * Contador estático para asignar un ID único a cada venta.
+     */
     private static int contadorID = 0;
+
+    /**
+     * ID único de la venta.
+     */
     private static int ID;
+
+    /**
+     * Fecha en la que se realiza la venta.
+     */
     private LocalDate  date;
+
+    /**
+     * DNI del comprador.
+     */
     private String id_buyer;
+
+    /**
+     * Lista de IDs de mascotas vendidas en esta venta.
+     */
     private List<Integer> List_id_pet;
+
+    /**
+     * Precio total de la venta.
+     */
     private int price;
 
+    /**
+     * Constructor de la clase Venta.
+     *
+     * @param Fecha Fecha de la venta.
+     * @param DNI_Comprador DNI del cliente comprador.
+     * @param ListaDeIDMascotasID Lista con los ID de las mascotas vendidas.
+     * @param Price Precio total de la venta.
+     */
     public Venta(LocalDate  Fecha, String DNI_Comprador, List<Integer> ListaDeIDMascotasID, int Price) {
         this.ID = ++contadorID;
         this.date = Fecha;
@@ -20,42 +54,83 @@ public class Venta {
         this.List_id_pet = ListaDeIDMascotasID;
         this.price = Price;
     }
-    /// GETS
 
-    //Sirven para consultar los valores
+    // GETS
+
+    /**
+     * @return ID de la venta.
+     */
     public int getId(){return this.ID;}
 
+    /**
+     * @return Fecha de la venta.
+     */
     public LocalDate getDate(){return this.date;}
 
+    /**
+     * @return DNI del comprador.
+     */
     public String getId_buyer(){return this.id_buyer;}
 
+    /**
+     * @return Lista de ID de mascotas vendidas.
+     */
     public List<Integer> getList_id_pet(){return this.List_id_pet;}
 
+    /**
+     * @return Precio total de la venta.
+     */
     public int getPrice() {
         return price;
     }
 
-    /// SETS
+    // SETS
 
-    //Sirven para modificar los valores
-
+    /**
+     * Establece una nueva fecha para la venta.
+     *
+     * @param date Nueva fecha.
+     */
     public void setDate(LocalDate  date) {
         this.date = date;
     }
 
+
+    /**
+     * Establece un nuevo DNI de comprador.
+     *
+     * @param DNI_Comprador DNI nuevo.
+     */
     public void setId_buyer(String DNI_Comprador) {
         this.id_buyer = DNI_Comprador;
     }
 
+    /**
+     * Establece una nueva lista de ID de mascotas vendidas.
+     *
+     * @param ID_Mascota Lista de ID de mascotas.
+     */
     public void setName_pet(List<Integer> ID_Mascota) {
         this.List_id_pet = ID_Mascota;
     }
 
+    /**
+     * Establece un nuevo precio para la venta.
+     *
+     * @param price Nuevo precio.
+     */
     public void setPrice(int price) {
         this.price = price;
     }
 
-    /// Creacion de Compra
+    /**
+     * Método estático para realizar una compra. Comprueba validez de cliente y mascotas,
+     * marca mascotas como vendidas, las asigna al cliente y crea una nueva venta.
+     *
+     * @param DNICliente DNI del cliente que compra.
+     * @param ListaIDMascotas Lista de ID de mascotas que quiere comprar.
+     * @return Objeto Venta si es válida, null en caso contrario.
+     */
     public static Venta Compra(String DNICliente, ArrayList<Integer> ListaIDMascotas) {
 
         //Definimos las variables necesarias
@@ -117,6 +192,11 @@ public class Venta {
         return v1;
     }
 
+    /**
+     * Muestra por consola el listado completo de ventas.
+     *
+     * @param ListaVentas Lista de ventas realizadas.
+     */
     public static void MostrarVentas(ArrayList<Venta>ListaVentas){
         for (Venta v1 : ListaVentas){
             System.out.println(
@@ -127,6 +207,13 @@ public class Venta {
                     ", Precio Total: "+v1.getPrice());
         }
     }
+
+    /**
+     * Muestra por consola las ventas realizadas por un cliente específico (filtrando por DNI).
+     *
+     * @param ListaVentas Lista de todas las ventas.
+     * @param DNI DNI del cliente a filtrar.
+     */
     public static void MostrarVentaConDNI(ArrayList<Venta>ListaVentas, String DNI){
 
         for (Venta v1 : ListaVentas){

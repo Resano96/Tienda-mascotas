@@ -5,11 +5,31 @@ import java.util.ArrayList;
 import static Tienda.Cliente.crearCliente;
 import static Tienda.Mascota.crearMascota;
 
+/**
+ * Clase que actúa como almacenamiento estático de datos para la tienda.
+ * Contiene listas de clientes, mascotas y ventas.
+ */
 public class Datos {
+
+    /**
+     * Lista estática de todos los clientes registrados.
+     */
     public static ArrayList<Cliente> ListadoDeClientes = new ArrayList<>();
+
+    /**
+     * Lista estática de todas las mascotas disponibles o vendidas.
+     */
     public static ArrayList<Mascota> ListadoDeMascotas = new ArrayList<>();
+
+    /**
+     * Lista estática de todas las ventas realizadas.
+     */
     public static ArrayList<Venta> ListadoDeVentas = new ArrayList<>();
 
+    /**
+     * Carga datos de ejemplo en las listas de clientes y mascotas.
+     * Se utiliza para iniciar el sistema con información precargada.
+     */
 public static void CargarDatos(){
     ListadoDeMascotas.add(crearMascota("Perro", "Labrador Retriever", "Amarillo", 2, 550));
     ListadoDeMascotas.add(crearMascota("Gato", "Siamés", "Crema con puntos marrones", 1, 350));
