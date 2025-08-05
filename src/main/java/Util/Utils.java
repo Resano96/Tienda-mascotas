@@ -33,10 +33,11 @@ public class Utils {
 
         while (!entradaValida) {
             System.out.print(mensaje);
-            texto = scanner.nextLine().trim(); // quitamos espacios en blanco al inicio/final
+            // quitamos espacios en blanco al inicio/final
+            texto = scanner.nextLine().trim();
 
             if (texto.isEmpty()) {
-                System.out.println("⚠️ ERROR: Debes introducir un texto.");
+                System.out.println("Debes introducir un texto.");
             } else {
                 entradaValida = true;
             }

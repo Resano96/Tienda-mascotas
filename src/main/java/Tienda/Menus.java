@@ -31,7 +31,7 @@ public class Menus {
         System.out.println(
                 "\n\tMENU MASCOTAS \n" +
                         "1.- Alta de Mascotas\n" +
-                        "2.- Búsqueda de Mascotas (Filtros)\n" +
+                        "2.- Lista de mascotas\n" +
                         "3.- Modificación de Precios\n" +
                         "4.- Baja de Mascotas\n" +
                         "5.- Volver al Menú Principal\n" +
@@ -50,5 +50,4 @@ public class Menus {
         );
         return Utils.pedirEntero("Elige una opción: ");
     }
-
 }
