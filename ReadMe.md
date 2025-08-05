@@ -1,6 +1,6 @@
 # ProyectoVerano
 
-## 📦 Estructura del Proyecto
+## Estructura del Proyecto
 
 
                     ProyectoVerano/
@@ -30,8 +30,9 @@ Este proyecto está construido con [Maven](https://maven.apache.org/). Asegúrat
 
 ```bash
 mvn -v
-Para compilar y ejecutar el proyecto:
 ```
+Para compilar y ejecutar el proyecto:
+
 ```bash
 mvn compile
 mvn exec:java -Dexec.mainClass="Tienda.Main"
@@ -72,4 +73,5 @@ Los tests están implementados con JUnit 5. Para ejecutarlos:
 
 ## Autor
 Ander Resano
+
 Proyecto desarrollado como parte de la práctica de programación en Java con Maven.
